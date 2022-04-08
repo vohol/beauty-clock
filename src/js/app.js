@@ -3,9 +3,6 @@ flsFunctions.isWebp();
 import dataQuotes from '../files/quotes.js';
 const startTime = new Date() 
 export let quotes = [];
-
-
-
   
 document.addEventListener('DOMContentLoaded', function() {
   flsFunctions.clock(startTime);
@@ -13,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
   flsFunctions.initTimeAndDateInfo(startTime);
   flsFunctions.setGreetings(startTime);
   flsFunctions.setupQuotes();
+  flsFunctions.letsMusic();
+  
 })
 
 //SETUP QUOTES
@@ -30,7 +29,6 @@ updatePhrase.addEventListener('click',  function() {
 //init click for showing more information about time
 const buttonExpandDetails = document.querySelector('.more-button' )
 buttonExpandDetails.addEventListener('click', flsFunctions.moreLessClick)
-
 
 //MAIN CLOCK FUNCTION
 setInterval ( function() {

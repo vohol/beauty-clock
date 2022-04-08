@@ -141,3 +141,10 @@ export function rotateButton() {
   updatePhrase.style.OTransform = `rotate(${deg+turn}deg)`
   deg += turn;
 }
+
+const audio = new Audio('files/music.mp3');
+
+export function letsMusic() {
+  audio.play();
+  audio.volume = 0.3;
+}
