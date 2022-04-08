@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/head.html',{
+	"title":"Clock"
+	})
+	<body>
+		@@include('html/header.html',{})
+		<main>
+			<section data-day-time="day" class="clock">
+				<div class="clock__container">
+					<div class="clock__phrase-block phrase-block">
+						<p class="phrase-block__phrase"></p>
+						<span class="phrase-block__athor"></span>
+						<button class="phrase-block__update">
+							<svg class="update-icon phrase-block__update-icon">
+								<use xlink:href="@img/icons/icons-mono.svg#update-icon"></use>
+						</svg>
+						</button>
+					</div>
+
+					<div class="clock__time-block">
+						<span class="clock__greetings">GOOD MORNING</span>
+						<p class="clock__time">
+							<span class="clock__hours">11</span>:<span class="clock__mins">37</span><span class="clock__timezone">BST</span>
+						</p>
+						<p class="clock__place">
+							IN
+							<span class="clock__town">LONDON</span>
+							<span class="clock__country">UK</span>
+						</p>
+					</div>
+
+					<div class="clock__expand-btn more-button">
+						<span class="more-button__text">MORE</span>
+						<div class="more-button__icon">
+							<span class="more-button__stick more-button__stick--right"></span>
+							<span class="more-button__stick more-button__stick--left"></span>
+						</div>
+					</div>
+
+					<div class="clock__details">
+						<div class="clock__details-row">
+							<span class="clock__details-left-part" >CURRENT TIMEZONE</span>
+							<span class="clock__details-right-part" id="timezone">Europe/London</span>
+						</div>
+						<div class="clock__details-row">
+							<span class="clock__details-left-part">Day of the year</span>
+							<span class="clock__details-right-part" id="day-of-the-year">295</span>
+						</div>
+						<div class="clock__details-row">
+							<span class="clock__details-left-part">Day of the week</span>
+							<span class="clock__details-right-part" id="day-of-the-week">5</span>
+						</div>
+						<div class="clock__details-row">
+							<span class="clock__details-left-part">Week number</span>
+							<span class="clock__details-right-part" id="week-number">42</span>
+						</div>
+
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/footer.html',{})
+		<script src="js/app.min.js"></script>
+	</body>
+</html>
