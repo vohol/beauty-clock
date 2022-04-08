@@ -1,3 +1,5 @@
+import * as app from "../app.js";
+
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
 export function isWebp() {
 	// Проверка поддержки webp
@@ -89,4 +91,53 @@ export function initTimeAndDateInfo(date) {
     .catch(function (err) {
       console.log('error: ' + err);
     });
+}
+
+
+//init greetings
+const greetingsBlock = document.querySelector('.clock__greetings')
+
+export function setGreetings(time) {
+  let tempVariable = time.getHours()
+  let greetingsMessage;
+  switch (tempVariable) {
+    case (tempVariable >= 6 && tempVariable <= 10 && tempVariable):
+      default:
+      greetingsMessage = "good morning";
+      break;
+    case (tempVariable >= 10 && tempVariable <= 16 && tempVariable):
+      greetingsMessage = "good day";
+      break;
+    case (tempVariable >= 16 && tempVariable <= 22 && tempVariable):
+      greetingsMessage = "good evening";
+      break;
+    case (tempVariable >= 12 && tempVariable <= 6 && tempVariable):
+      greetingsMessage = "good night";
+      break;
+  }
+  greetingsBlock.textContent = greetingsMessage;
+}
+
+
+//SETUP QUOTES
+const updatePhrase = document.querySelector('.phrase-block__update')
+const phrase = document.querySelector('.phrase-block__phrase')
+const phraseAthor = document.querySelector('.phrase-block__athor')
+
+export function setupQuotes() {
+  let randomValue = Math.floor(Math.random() * (app.quotes.length-1));
+  phrase.textContent = app.quotes[randomValue].quote
+  phraseAthor.textContent = app.quotes[randomValue].author
+}
+
+let deg = 0;
+
+export function rotateButton() {
+  const turn = 360;
+  updatePhrase.style.transform = `rotate(${deg+turn}deg)`
+  updatePhrase.style.MozTransform = `rotate(${deg+turn}deg)`
+  updatePhrase.style.webkitTransform = `rotate(${deg+turn}deg)`
+  updatePhrase.style.msTransform = `rotate(${deg+turn}deg)`
+  updatePhrase.style.OTransform = `rotate(${deg+turn}deg)`
+  deg += turn;
 }

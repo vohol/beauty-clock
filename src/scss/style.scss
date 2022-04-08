@@ -352,20 +352,26 @@ $tablet: 768px;
     font-weight: 700;
     font-size: 12px;
     line-height: 22px;
+    
   }
   &__update {
     background-color: transparent;
     position: absolute;
     top: 0;
     right: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
   &__update-icon {
     fill: $color-white;
     opacity: 0.5;
-    transition: opacity 0.3s;
+    transition: all 0.3s;
   }
   &__update:hover &__update-icon {
     opacity: 1;
+    
   }
   &.hiden {
     display: none;
