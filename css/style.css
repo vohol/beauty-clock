@@ -170,9 +170,27 @@ h1, h2, h3, h4, h5, h6 {
 .clock[data-day-time=day] {
   background-image: url("../img/day-bg.png");
 }
+.clock[data-day-time=day] .clock__details {
+  background: rgba(255, 255, 255, 0.75);
+}
+.clock[data-day-time=day] .clock__details-left-part {
+  color: #303030;
+}
+.clock[data-day-time=day] .clock__details-right-part {
+  color: #303030;
+}
 
 .clock[data-day-time=night] {
   background-image: url("../img/night-bg.png");
+}
+.clock[data-day-time=night] .clock__details {
+  background: rgba(0, 0, 0, 0.75);
+}
+.clock[data-day-time=night] .clock__details-left-part {
+  color: #ffffff;
+}
+.clock[data-day-time=night] .clock__details-right-part {
+  color: #ffffff;
 }
 
 .clock[data-day-time=night] .clock__greetings::before {
@@ -248,7 +266,6 @@ h1, h2, h3, h4, h5, h6 {
 .clock__details {
   position: fixed;
   width: 100%;
-  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(40.7742px);
   bottom: -100%;
   right: 0;
@@ -274,13 +291,11 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 28px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #303030;
 }
 .clock__details-right-part {
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
-  color: #303030;
 }
 
 @media screen and (min-width: 768px) {
