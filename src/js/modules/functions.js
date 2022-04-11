@@ -18,7 +18,7 @@ export function isWebp() {
 }
 
 import { getSunrise, getSunset } from 'sunrise-sunset-js';
-import moment from 'moment';
+import { DateTime } from "luxon";
 
 
 //variables for clock funtion
@@ -65,6 +65,8 @@ navigator.geolocation.getCurrentPosition(function(position) {
 
 //init main time and date information
 export function initTimeAndDateInfo(date) {
+  
+  const dt = DateTime.now();
   const timezoneShortBlock = document.querySelector('.clock__timezone')
   const timezoneBlock = document.querySelector('#timezone')
   const dayOfTheYearBlock = document.querySelector('#day-of-the-year')
@@ -74,9 +76,9 @@ export function initTimeAndDateInfo(date) {
   
   timezoneShortBlock.textContent = split[5].slice(0,3);
   timezoneBlock.textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  dayOfTheYearBlock.textContent = moment().dayOfYear();
-  dayOfTheWeekBlock.textContent = moment().day();
-  weekBlock.textContent = moment().isoWeek();
+  dayOfTheYearBlock.textContent = dt.ordinal;
+  dayOfTheWeekBlock.textContent = dt.weekday;
+  weekBlock.textContent = dt.weekNumber;
   
   const requestLocation = 'https://geolocation-db.com/json/d802faa0-10bd-11ec-b2fe-47a0872c6708'
   
@@ -99,19 +101,21 @@ const greetingsBlock = document.querySelector('.clock__greetings')
 
 export function setGreetings(time) {
   let tempVariable = time.getHours()
+  
   let greetingsMessage;
   switch (tempVariable) {
-    case (tempVariable >= 6 && tempVariable <= 10 && tempVariable):
+    case (tempVariable >= 6 && tempVariable < 10 && tempVariable):
       default:
       greetingsMessage = "good morning";
       break;
     case (tempVariable >= 10 && tempVariable <= 16 && tempVariable):
       greetingsMessage = "good day";
       break;
-    case (tempVariable >= 16 && tempVariable <= 22 && tempVariable):
+    case (tempVariable > 16 && tempVariable < 22 && tempVariable):
       greetingsMessage = "good evening";
       break;
-    case (tempVariable >= 12 && tempVariable <= 6 && tempVariable):
+    case (tempVariable >= 22  && tempVariable):
+    case (tempVariable < 6 && tempVariable):
       greetingsMessage = "good night";
       break;
   }
