@@ -106,10 +106,29 @@ $tablet: 768px;
 
 .clock[data-day-time=day] {
   background-image: url('@img/day-bg.png');
+  .clock__details {
+    background: rgba(255, 255, 255, 0.75);
+  }
+  .clock__details-left-part {
+    color: $color-pale-black;
+  }
+  .clock__details-right-part {
+    color: $color-pale-black;
+  }
 }
 
 .clock[data-day-time=night] {
   background-image: url('@img/night-bg.png');
+  .clock__details {
+    background: rgba(0, 0, 0, 0.75);
+  }
+  .clock__details-left-part {
+    color: $color-white;
+  }
+  .clock__details-right-part {
+    color: $color-white;
+  }
+
 }
 
 
@@ -186,7 +205,6 @@ $tablet: 768px;
   &__details {
     position: fixed;
     width: 100%;
-    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(40.7742px);
     bottom: -100%;
     right: 0;
@@ -212,13 +230,11 @@ $tablet: 768px;
     line-height: 28px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: $color-pale-black;
   }
   &__details-right-part {
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
-    color: $color-pale-black;
   }
 }
 
@@ -227,7 +243,6 @@ $tablet: 768px;
     
     &__container {
       padding: 80px 0 0 64px;
-      //height: 100vh;
     }
     &__time-block {
       padding-top: 513px;
@@ -293,7 +308,6 @@ $tablet: 768px;
   .clock {
     &__container {
       padding: 56px 0 0 165px;
-      //height: 100vh;
     }
     &__time-block {
       padding-top: 356px;
