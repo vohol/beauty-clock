@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   flsFunctions.initTimeAndDateInfo(startTime);
   flsFunctions.setGreetings(startTime);
   flsFunctions.setupQuotes();
-  flsFunctions.letsMusic();
+  //flsFunctions.letsMusic();
   
 })
 

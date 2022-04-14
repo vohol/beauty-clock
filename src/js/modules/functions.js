@@ -149,6 +149,6 @@ export function rotateButton() {
 const audio = new Audio('files/music.mp3');
 
 export function letsMusic() {
-  audio.play();
+  audio.play()
   audio.volume = 0.3;
 }
